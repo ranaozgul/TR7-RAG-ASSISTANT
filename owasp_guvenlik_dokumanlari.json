@@ -1,0 +1,182 @@
+[
+  {
+    "id": "owasp_01_sql_i_tanim",
+    "title": "SQL Injection (SQLi) Nedir?",
+    "category": "cybersecurity",
+    "content": "SQL Injection (SQLi), veritabanı sorgularına zararlı SQL komutlarının enjekte edilmesiyle oluşan ve veritabanındaki gizli bilgilere yetkisiz erişim, veri silme veya değiştirme gibi sonuçlar doğuran kritik bir siber güvenlik zafiyetidir."
+  },
+  {
+    "id": "owasp_01_sql_i_nasil_yapilir",
+    "title": "SQL Injection (SQLi) Nasıl Gerçekleştirilir?",
+    "category": "cybersecurity",
+    "content": "SQL Injection saldırısı, genellikle kullanıcıdan gelen girdilerin (form alanları, arama çubukları, URL parametreleri) doğrudan SQL sorgularına string birleştirme yoluyla eklendiği durumlarda yapılır. Saldırgan girdi alanlarına ' OR '1'='1 veya UNION SELECT gibi ifadeler yazarak sorgunun mantığını manipüle eder."
+  },
+  {
+    "id": "owasp_01_sql_i_korunma",
+    "title": "SQL Injection (SQLi) Saldırılarından Nasıl Korunulur?",
+    "category": "cybersecurity",
+    "content": "SQL Injection zafiyetinden korunmak için: 1) Dinamik sorgular yerine Parametrik Sorgular (Prepared Statements) kullanılmalıdır. 2) ORM araçları tercih edilmelidir. 3) Kullanıcı girdileri Girdi Doğrulamasından (Input Validation) geçirilmelidir. 4) WAF kuralları ile bu tarz anomaliler engellenmelidir."
+  },
+  {
+    "id": "owasp_02_xss_tanim",
+    "title": "Cross-Site Scripting (XSS) Nedir?",
+    "category": "cybersecurity",
+    "content": "Cross-Site Scripting (XSS), saldırganların güvenilir web sitelerine kötü amaçlı istemci tarafı betikleri (genellikle JavaScript) enjekte etmesini ve bu kodların kurbanların tarayıcılarında çalışmasını sağlayan bir web zafiyetidir."
+  },
+  {
+    "id": "owasp_02_xss_nasil_yapilir",
+    "title": "Cross-Site Scripting (XSS) Nasıl Gerçekleştirilir?",
+    "category": "cybersecurity",
+    "content": "XSS saldırıları Reflected, Stored ve DOM-based olarak üçe ayrılır. Saldırgan, yorum panellerine veya URL parametrelerine <script>alert('XSS')</script> gibi kodlar ekleyerek siteyi ziyaret eden diğer kullanıcıların oturum çerezlerini (cookies) çalabilir."
+  },
+  {
+    "id": "owasp_02_xss_korunma",
+    "title": "Cross-Site Scripting (XSS) Zafiyetinden Nasıl Korunulur?",
+    "category": "cybersecurity",
+    "content": "XSS'ten korunmak için: 1) Kullanıcıdan alınan tüm girdiler ekrana yansıtılmadan önce HTML Encoding işlemine tabi tutulmalıdır. 2) Content Security Policy (CSP) başlıkları etkinleştirilmelidir. 3) Hassas çerezler için HttpOnly bayrağı kullanılmalıdır."
+  },
+  {
+    "id": "owasp_03_broken_auth_tanim",
+    "title": "Zayıf Kimlik Doğrulama (Broken Authentication) Nedir?",
+    "category": "cybersecurity",
+    "content": "Zayıf Kimlik Doğrulama, kullanıcı kimliklerinin, oturum yönetiminin veya parola politikalarının yanlış yapılandırılması sonucu saldırganların kullanıcı hesaplarını ve oturumlarını ele geçirmesine olanak tanıyan bir güvenlik açığıdır."
+  },
+  {
+    "id": "owasp_03_broken_auth_nasil_yapilir",
+    "title": "Zayıf Kimlik Doğrulama Saldırıları Nasıl Yapılır?",
+    "category": "cybersecurity",
+    "content": "Bu açıklar genellikle Brute-force saldırıları, tahmin edilebilir parola sıfırlama token'ları, zayıf şifre izinleri, oturum sonlandırma mekanizmalarının eksikliği ve URL'de açıkta taşınan session ID'ler aracılığıyla sömürülür."
+  },
+  {
+    "id": "owasp_03_broken_auth_korunma",
+    "title": "Zayıf Kimlik Doğrulama Açıklarından Nasıl Korunulur?",
+    "category": "cybersecurity",
+    "content": "Korunma yöntemleri şunlardır: 1) Çok aşamalı kimlik doğrulama (MFA/2FA) zorunlu kılınmalıdır. 2) Güçlü parola politikaları uygulanmalıdır. 3) Brute-force saldırılarına karşı Rate Limiting ve IP bloklama yapılmalıdır. 4) Oturum token'ları şifrelenmiş ve HttpOnly çerezlerde saklanmalıdır."
+  },
+  {
+    "id": "owasp_04_insecure_deserialization_tanim",
+    "title": "Güvensiz Seri Hale Getirme (Insecure Deserialization) Nedir?",
+    "category": "cybersecurity",
+    "content": "Güvensiz Seri Hale Getirme, bir uygulamanın güvenmeyen bir kaynaktan gelen serileştirilmiş verileri (serialize data) doğrulamadan tekrar nesneye dönüştürmesi (deserialize) sonucunda uzaktan kod yürütülmesine (RCE) yol açabilen ciddi bir zafiyettir."
+  },
+  {
+    "id": "owasp_04_insecure_deserialization_nasil_yapilir",
+    "title": "Güvensiz Seri Hale Getirme Nasıl Sömürülür?",
+    "category": "cybersecurity",
+    "content": "Saldırgan, uygulamanın veri alışverişinde kullandığı nesne yapısını manipüle ederek içine zararlı komutlar yerleştirir. Uygulama bu veriyi deserialize ettiğinde arka planda saldırganın komutları sunucu üzerinde çalıştırılır."
+  },
+  {
+    "id": "owasp_04_insecure_deserialization_korunma",
+    "title": "Güvensiz Seri Hale Getirme Açıklarından Nasıl Korunulur?",
+    "category": "cybersecurity",
+    "content": "Korunma yolları: 1) Harici kaynaklardan gelen serileştirilmiş veriler asla doğrudan deserialize edilmemelidir. 2) Basit veri formatları (JSON, XML gibi) tercih edilmelidir. 3) Deserialization süreçlerinde tür kısıtlamaları ve imza (signature) denetimleri uygulanmalıdır."
+  },
+  {
+    "id": "owasp_05_csrf_tanim",
+    "title": "CSRF (Cross-Site Request Forgery) Nedir?",
+    "category": "cybersecurity",
+    "content": "CSRF (Siteler Arası İstek Sahteciliği), oturum açmış masum bir kullanıcının tarayıcısının zorla istenmeyen, yetkisiz komutlar ve işlemler gerçekleştirmesini sağlayan bir saldırı türüdür."
+  },
+  {
+    "id": "owasp_05_csrf_nasil_yapilir",
+    "title": "CSRF Saldırısı Nasıl Gerçekleştirilir?",
+    "category": "cybersecurity",
+    "content": "Kullanıcı hedef bir web sitesinde oturum açmış durumdayken, saldırganın hazırladığı kötü amaçlı harici bir siteye veya bağlantıya tıklamasıyla gerçekleşir. Tarayıcı, arka planda otomatik olarak geçerli çerezleri kullanarak hedef siteye istek gönderir ve işlem onaylanmış olur."
+  },
+  {
+    "id": "owasp_05_csrf_korunma",
+    "title": "CSRF Saldırılarından Nasıl Korunulur?",
+    "category": "cybersecurity",
+    "content": "CSRF'yi önlemek için: 1) Her HTTP isteğinde sunucu tarafından üretilen benzersiz Anti-CSRF Token'ları kullanılmalıdır. 2) Çerezlerde SameSite politikası 'Strict' veya 'Lax' olarak ayarlanmalıdır. 3) Kritik işlemlerde ek kullanıcı doğrulaması istenmelidir."
+  },
+  {
+    "id": "owasp_06_security_misconfig_tanim",
+    "title": "Güvenlik Yapılandırma Hataları (Security Misconfiguration) Nedir?",
+    "category": "cybersecurity",
+    "content": "Güvenlik Yapılandırma Hataları, yazılımların, sunucuların, framework'lerin veya veritabanlarının varsayılan ve güvenli olmayan ayarlarının değiştirilmeden bırakılması veya eksik yapılandırılması durumudur."
+  },
+  {
+    "id": "owasp_06_security_misconfig_nasil_yapilir",
+    "title": "Güvenlik Yapılandırma Hataları Nasıl Sömürülür?",
+    "category": "cybersecurity",
+    "content": "Saldırganlar otomatik tarama araçları kullanarak açıkta kalan debug sayfalarını, gereksiz açık portları, varsayılan yönetici şifrelerini (admin/admin gibi) ve dizin listeleme açıklarını tespit ederek sisteme sızarlar."
+  },
+  {
+    "id": "owasp_06_security_misconfig_korunma",
+    "title": "Güvenlik Yapılandırma Hatalarından Nasıl Korunulur?",
+    "category": "cybersecurity",
+    "content": "Korunma yolları: 1) Tüm sistemler yayına alınmadan önce sıkılaştırılmalıdır (Hardening). 2) Varsayılan hesap bilgileri değiştirilmelidir. 3) Gereksiz servisler ve özellikler kapatılmalıdır. 4) Security Headers eksiksiz yapılandırılmalıdır."
+  },
+  {
+    "id": "owasp_07_ssrf_tanim",
+    "title": "SSRF (Server-Side Request Forgery) Nedir?",
+    "category": "cybersecurity",
+    "content": "SSRF (Sunucu Tarafından İstek Sahteciliği), saldırganın web uygulamasını kötüye kullanarak sunucunun doğrudan kendi iç ağından veya harici dış kaynaklardan yetkisiz HTTP istekleri göndermesini sağlayan bir zafiyettir."
+  },
+  {
+    "id": "owasp_07_ssrf_nasil_yapilir",
+    "title": "SSRF Saldırısı Nasıl Gerçekleştirilir?",
+    "category": "cybersecurity",
+    "content": "Uygulama, kullanıcıdan aldığı URL parametresini (örn: dış bir resmi içe aktarma özelliği) doğrulamadan doğrudan kendi sunucusundan talep ediyorsa saldırgan buraya http://localhost/admin veya dahili IP adresleri yazarak dışarıdan erişilemeyen iç sistemleri hedef alabilir."
+  },
+  {
+    "id": "owasp_07_ssrf_korunma",
+    "title": "SSRF Saldırılarından Nasıl Korunulur?",
+    "category": "cybersecurity",
+    "content": "SSRF'den korunmak için: 1) Kullanıcıdan gelen URL girdileri sıkı bir beyaz liste (whitelist) denetiminden geçirilmelidir. 2) Sunucunun dışarıya atacağı istekler için IP bloklama (dahili IP'leri yasaklama) uygulanmalıdır. 3) Gereksiz ağ protokolleri (gopher, file vb.) devre dışı bırakılmalıdır."
+  },
+  {
+    "id": "owasp_08_broken_access_control_tanim",
+    "title": "Yetki Kontrolü Kayıpları (Broken Access Control) Nedir?",
+    "category": "cybersecurity",
+    "content": "Yetki Kontrolü Kayıpları, kullanıcıların yapmaması gereken işlemleri veya erişmemesi gereken verileri (örneğin başka bir kullanıcının paneline girmek) sistemin kısıtlayamaması durumudur."
+  },
+  {
+    "id": "owasp_08_broken_access_control_nasil_yapilir",
+    "title": "Yetki Kontrolü Kayıpları Nasıl Sömürülür?",
+    "category": "cybersecurity",
+    "content": "Saldırgan, URL'deki ID numarasını değiştirerek (IDOR - Insecure Direct Object References) başka bir kullanıcıya ait verileri görüntüler veya standart bir kullanıcı yetkisiyle doğrudan /admin dizinlerine istek atarak yetki yükseltmeye çalışır."
+  },
+  {
+    "id": "owasp_08_broken_access_control_korunma",
+    "title": "Yetki Kontrolü Kayıplarından Nasıl Korunulur?",
+    "category": "cybersecurity",
+    "content": "Korunma yolları: 1) Erişim denetimleri (Authorization checks) merkezi bir yapıda her istekte zorunlu kılınmalıdır. 2) Varsayılan olarak tüm kaynaklara erişim reddedilmelidir (Deny by default). 3) IDOR açıklarına karşı her istekte nesne sahipliği doğrulaması yapılmalıdır."
+  },
+  {
+    "id": "owasp_09_cryptographic_failures_tanim",
+    "title": "Kriptografik Hatalar (Cryptographic Failures) Nedir?",
+    "category": "cybersecurity",
+    "content": "Kriptografik Hatalar (Eski adı Hassas Veri İfşası), hassas verilerin (şifreler, kredi kartları, kişisel veriler) şifrelenmeden düz metin (plaintext) olarak saklanması veya zayıf/eski algoritmalarla korunması durumudur."
+  },
+  {
+    "id": "owasp_09_cryptographic_failures_nasil_yapilir",
+    "title": "Kriptografik Hatalar Nasıl Sömürülür?",
+    "category": "cybersecurity",
+    "content": "Veritabanı sızıntısı durumunda MD5 veya SHA1 gibi kırılması çok kolay eski hash algoritmalarıyla saklanan şifreler kolayca ele geçirilir. Ayrıca SSL/TLS yapılandırma eksiklikleri nedeniyle ağdaki veriler ortadaki adam (MitM) saldırılarıyla dinlenebilir."
+  },    
+  {
+    "id": "owasp_09_cryptographic_failures_korunma",
+    "title": "Kriptografik Hatalardan Nasıl Korunulur?",
+    "category": "cybersecurity",
+    "content": "Korunma yolları: 1) Veriler hem diskte (at rest) hem de ağda (in transit - HTTPS/TLS 1.3) güçlü algoritmalarla şifrelenmelidir. 2) Parolalar için düz hash yerine Argon2, bcrypt veya PBKDF2 gibi tuzlama (salting) destekleyen modern algoritmalar kullanılmalıdır."
+  },
+  {
+    "id": "owasp_10_injection_general_tanim",
+    "title": "Genel Enjeksiyon Açıkları (Injection) Nedir?",
+    "category": "cybersecurity",
+    "content": "Enjeksiyon (Injection) açıkları, güvenilmeyen verilerin bir yorumlayıcıya veya sorguya komut ya da veri olarak gönderilmesiyle oluşan, SQLi, OS Command Injection ve LDAP Injection gibi geniş bir zafiyet ailesidir."
+  },
+  {
+    "id": "owasp_10_injection_general_nasil_yapilir",
+    "title": "Genel Enjeksiyon Saldırıları Nasıl Yapılır?",
+    "category": "cybersecurity",
+    "content": "Uygulama arka planda işletim sistemine komut gönderirken (örn: ping aracı) kullanıcıdan gelen girdiyi doğrudan terminale yansıtıyorsa, saldırgan komut ayırıcı karakterler (;, &&, | gibi) kullanarak sunucu terminalinde kendi komutlarını çalıştırabilir."
+  },
+  {
+    "id": "owasp_10_injection_general_korunma",
+    "title": "Genel Enjeksiyon Açıklarından Nasıl Korunulur?",
+    "category": "cybersecurity",
+    "content": "Genel korunma yöntemleri: 1) İşletim sistemi komutları doğrudan tetiklenmek yerine güvenli API'ler kullanılmalıdır. 2) Kullanıcı girdileri karakter bazlı güvenli filtrelemeden (Sanitization) geçirilmelidir. 3) En az yetki prensibi (Principle of Least Privilege) uygulanmalıdır."
+  }
+]

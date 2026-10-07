@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>TR7 Yapay Zeka Asistanı - LUNA</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="bg-animation"></div>
+
+    <div class="app-container">
+        
+        <!-- SOL PANEL (SIDEBAR) -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <button class="new-chat-btn" onclick="startNewChat()">+ Yeni Sohbet</button>
+            </div>
+            <div class="sessions-list" id="sessionsList">
+                <!-- Oturumlar JS ile buraya gelecek -->
+            </div>
+        </aside>
+
+        <!-- ANA CHAT ALANI -->
+        <main class="main-content">
+            <header>
+                <div class="header-left">
+                    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+                    <h1>TR7 UZMAN ASİSTAN</h1>
+                </div>
+                
+                <!-- SAĞ TARAF KISMI -->
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    
+                    <!-- Minimalist Sohbeti Kopyala İkonu -->
+                    <button onclick="copyAllChat()" class="icon-copy-btn" title="Tüm Sohbeti Kopyala">
+                        📋
+                    </button>
+
+                    <!-- TAVIR SEÇİCİ -->
+                    <div class="persona-selector">
+                        <label for="persona">Tavır:</label>
+                        <select id="persona" name="persona" class="glass-select">
+                            <option value="resmi">Resmi (Profesyonel)</option>
+                            <option value="sinirli">Sinirli (Agresif IT)</option>
+                            <option value="laubali">Laubali (Umursamaz)</option>
+                        </select>
+                    </div>
+                </div>
+            </header>
+
+            <div class="chat-container" id="chatBox">
+                <!-- Mesajlar JS ile buraya yüklenecek -->
+            </div>
+
+            <div class="input-area">
+                <div class="input-wrapper">
+                    <input type="text" id="userInput" placeholder="Sorunuzu buraya yazın..." onkeydown="checkEnter(event)">
+                    <button class="send-btn" onclick="sendMessage()">Gönder</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+
+    <!-- Özel Onay Modalı -->
+    <div id="custom-confirm-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h3>Sohbeti Sil</h3>
+            <p>Bu sohbeti silmek istediğinize emin misiniz?</p>
+            <div class="modal-buttons">
+                <button id="modal-cancel-btn" class="btn-cancel">İptal</button>
+                <button id="modal-confirm-btn" class="btn-confirm">Evet</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
