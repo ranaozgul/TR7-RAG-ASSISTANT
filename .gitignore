@@ -1,0 +1,18 @@
+# Çevresel Değişkenler ve Gizli Dosyalar (En Kritik Kısım!)
+.env
+.env.*
+
+# Sanal Ortamlar
+.venv/
+.venv-1/
+venv/
+env/
+ENV/
+
+# Python Cache Dosyaları
+__pycache__/
+*.py[cod]
+*$py.class
+
+# VS Code Ayarları
+.vscode/
